@@ -1,6 +1,6 @@
 # Análisis de un Circuito RC: Función de Transferencia
 
-
+Este repositorio contiene un script de MATLAB diseñado para modelar, simular y analizar el comportamiento dinámico de un circuito eléctrico **Resistencia-Capacitor (RC)** de primer orden. El enfoque principal es validar la relación entre los parámetros físicos del circuito y su respuesta en el tiempo.
 
 <div align="center">
   <h4>Captura del Osciloscopio Digital</h4>
@@ -10,7 +10,7 @@
 </div>
 
 
-## Fundamentación Teórica: Sistemas de Primer Orden
+## 1. Fundamentación Teórica: Sistemas de Primer Orden
 
 Un sistema de primer orden es aquel cuya dinámica está descrita por una ecuación diferencial lineal de primer grado. En ingeniería de control, estos sistemas se caracterizan por una respuesta exponencial suave sin oscilaciones.
 
@@ -31,14 +31,14 @@ Ante una entrada escalón de amplitud $A$, la respuesta temporal $y(t)$ es:
 
 $$y(t) = A(1 - e^{-t/\tau})$$
 
-##  Configuración del Sistema
+## 2. Configuración del Sistema
 
 Se han definido los siguientes valores para la simulación, correspondientes a componentes comerciales estándar:
 * **Resistencia (R):** $10,000 \, \Omega$ (10 kΩ).
 * **Capacitor (C):** $0.000100 \, F$ (100 µF).
 * **Voltaje de Entrada (Escalón):** 5V.
 
-##  Implementación en MATLAB
+## 3. Implementación en MATLAB
 En esta sección se detalla el uso de comandos especializados para transformar los parámetros físicos de resistencia y capacitancia en un modelo matemático ejecutable.
 
 ### Definición de Variables y Constantes
@@ -70,7 +70,7 @@ Se utiliza el comando `step` para obtener los datos de la carga del capacitor. E
 [y, t] = step(t, 5*H);
 ```
 
-##  Visualización y Análisis de Resultados
+## 4. Visualización y Análisis de Resultados
 
 En esta sección se presentan las gráficas obtenidas mediante la simulación, las cuales permiten validar el comportamiento teórico del circuito RC frente a los datos experimentales calculados por MATLAB.
 
@@ -100,7 +100,7 @@ Basado en los valores físicos de los componentes ($R = 10k\Omega$ y $C = 100\mu
 3.  **Estabilidad del Sistema:**
     * La ausencia de una parte imaginaria en el polo ($s = -1$) confirma que la respuesta es puramente exponencial y carece de oscilaciones, característica fundamental de los sistemas de primer orden.
 
-##  Validación mediante Simulación en Proteus
+## 5. Validación mediante Simulación en Proteus
 
 Para corroborar los resultados obtenidos en MATLAB, se realizó una simulación de hardware virtual en Proteus, permitiendo observar el comportamiento del circuito en un entorno cercano a la implementación física.
 
@@ -211,26 +211,15 @@ title('Respuesta al Escalón');
 
 
 ### Preguntas de análisis
-¿Cómo cambió la ubicación del polo en el plano 
-𝑠
-s al disminuir la resistencia en el Caso B?
-Al reducir la resistencia de 10 kΩ a 1 kΩ, el producto 
-𝑅
-𝐶
-RC disminuyó considerablemente. Como consecuencia, el polo del sistema pasó de aproximadamente −0.2127 a −2.1277. Esto provoca que el polo se desplace más a la izquierda sobre el eje real del plano 
-𝑠
-s.
-Un polo más lejano del eje imaginario indica una respuesta transitoria mucho más rápida y un comportamiento dinámico más estable, ya que el sistema decae con mayor rapidez.
+* ¿Cómo cambió la ubicación del polo en el plano $s$ al disminuir la resistencia en el Caso B?
+Al disminuir la resistencia de 10 kΩ a 1 kΩ: El valor de RC disminuye.
+El polo pasa de −0.2127 a −2.1277. Se mueve más hacia la izquierda en el plano s.
+El sistema se vuelve más rápido y más estable dinámicamente, ya que el polo está más alejado del eje imaginario.
 
-¿Hubo diferencias significativas entre el tiempo de establecimiento teórico y el medido físicamente? ¿A qué crees que se deba?
-Sí, es común encontrar pequeñas variaciones entre el tiempo de establecimiento calculado teóricamente y el que se obtiene en la práctica.
-Los factores más influyentes son:
-
-La tolerancia real del capacitor, que puede variar entre un ±10% y ±20% respecto a su valor nominal.
-
-Las resistencias parásitas presentes en cables y conexiones de la protoboard.
-
-Pequeñas variaciones introducidas por los instrumentos de medición.
+* ¿Hubo diferencias significativas entre el tiempo de establecimiento teórico y el medido físicamente? ¿A qué crees que se deba (tolerancia de componentes, resistencia de cables, etc.)?
+Sí, normalmente hay pequeñas diferencias.
+Se deben a:
+Tolerancia del capacitor (puede variar ±10% o ±20%)
 Tolerancia de la resistencia
 Resistencia interna de cables
 Resistencia interna de la fuente
