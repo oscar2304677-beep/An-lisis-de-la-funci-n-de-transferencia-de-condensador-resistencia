@@ -211,15 +211,26 @@ title('Respuesta al Escalón');
 
 
 ### Preguntas de análisis
-* ¿Cómo cambió la ubicación del polo en el plano $s$ al disminuir la resistencia en el Caso B?
-Al disminuir la resistencia de 10 kΩ a 1 kΩ: El valor de RC disminuye.
-El polo pasa de −0.2127 a −2.1277. Se mueve más hacia la izquierda en el plano s.
-El sistema se vuelve más rápido y más estable dinámicamente, ya que el polo está más alejado del eje imaginario.
+¿Cómo cambió la ubicación del polo en el plano 
+𝑠
+s al disminuir la resistencia en el Caso B?
+Al reducir la resistencia de 10 kΩ a 1 kΩ, el producto 
+𝑅
+𝐶
+RC disminuyó considerablemente. Como consecuencia, el polo del sistema pasó de aproximadamente −0.2127 a −2.1277. Esto provoca que el polo se desplace más a la izquierda sobre el eje real del plano 
+𝑠
+s.
+Un polo más lejano del eje imaginario indica una respuesta transitoria mucho más rápida y un comportamiento dinámico más estable, ya que el sistema decae con mayor rapidez.
 
-* ¿Hubo diferencias significativas entre el tiempo de establecimiento teórico y el medido físicamente? ¿A qué crees que se deba (tolerancia de componentes, resistencia de cables, etc.)?
-Sí, normalmente hay pequeñas diferencias.
-Se deben a:
-Tolerancia del capacitor (puede variar ±10% o ±20%)
+¿Hubo diferencias significativas entre el tiempo de establecimiento teórico y el medido físicamente? ¿A qué crees que se deba?
+Sí, es común encontrar pequeñas variaciones entre el tiempo de establecimiento calculado teóricamente y el que se obtiene en la práctica.
+Los factores más influyentes son:
+
+La tolerancia real del capacitor, que puede variar entre un ±10% y ±20% respecto a su valor nominal.
+
+Las resistencias parásitas presentes en cables y conexiones de la protoboard.
+
+Pequeñas variaciones introducidas por los instrumentos de medición.
 Tolerancia de la resistencia
 Resistencia interna de cables
 Resistencia interna de la fuente
