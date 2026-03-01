@@ -10,7 +10,7 @@
 </div>
 
 
-## 1. Fundamentación Teórica: Sistemas de Primer Orden
+## Fundamentación Teórica: Sistemas de Primer Orden
 
 Un sistema de primer orden es aquel cuya dinámica está descrita por una ecuación diferencial lineal de primer grado. En ingeniería de control, estos sistemas se caracterizan por una respuesta exponencial suave sin oscilaciones.
 
@@ -31,14 +31,14 @@ Ante una entrada escalón de amplitud $A$, la respuesta temporal $y(t)$ es:
 
 $$y(t) = A(1 - e^{-t/\tau})$$
 
-## 2. Configuración del Sistema
+##  Configuración del Sistema
 
 Se han definido los siguientes valores para la simulación, correspondientes a componentes comerciales estándar:
 * **Resistencia (R):** $10,000 \, \Omega$ (10 kΩ).
 * **Capacitor (C):** $0.000100 \, F$ (100 µF).
 * **Voltaje de Entrada (Escalón):** 5V.
 
-## 3. Implementación en MATLAB
+##  Implementación en MATLAB
 En esta sección se detalla el uso de comandos especializados para transformar los parámetros físicos de resistencia y capacitancia en un modelo matemático ejecutable.
 
 ### Definición de Variables y Constantes
@@ -70,7 +70,7 @@ Se utiliza el comando `step` para obtener los datos de la carga del capacitor. E
 [y, t] = step(t, 5*H);
 ```
 
-## 4. Visualización y Análisis de Resultados
+##  Visualización y Análisis de Resultados
 
 En esta sección se presentan las gráficas obtenidas mediante la simulación, las cuales permiten validar el comportamiento teórico del circuito RC frente a los datos experimentales calculados por MATLAB.
 
@@ -100,7 +100,7 @@ Basado en los valores físicos de los componentes ($R = 10k\Omega$ y $C = 100\mu
 3.  **Estabilidad del Sistema:**
     * La ausencia de una parte imaginaria en el polo ($s = -1$) confirma que la respuesta es puramente exponencial y carece de oscilaciones, característica fundamental de los sistemas de primer orden.
 
-## 5. Validación mediante Simulación en Proteus
+##  Validación mediante Simulación en Proteus
 
 Para corroborar los resultados obtenidos en MATLAB, se realizó una simulación de hardware virtual en Proteus, permitiendo observar el comportamiento del circuito en un entorno cercano a la implementación física.
 
