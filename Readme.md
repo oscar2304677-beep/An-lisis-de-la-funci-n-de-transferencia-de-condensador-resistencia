@@ -1,6 +1,6 @@
 # Análisis de un Circuito RC: Función de Transferencia
 
-Este repositorio contiene un script de MATLAB diseñado para modelar, simular y analizar el comportamiento dinámico de un circuito eléctrico **Resistencia-Capacitor (RC)** de primer orden. El enfoque principal es validar la relación entre los parámetros físicos del circuito y su respuesta en el tiempo.
+
 
 <div align="center">
   <h4>Captura del Osciloscopio Digital</h4>
